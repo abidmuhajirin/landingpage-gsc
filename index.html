@@ -11,6 +11,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   
+  <!-- STREAMING_CHUNK: Injecting custom styles for dark and light modes -->
   <style>
     :root {
       --bg-primary: #0a0a0a;
@@ -84,7 +85,7 @@
       background: linear-gradient(180deg, rgba(10,10,10,0.55) 0%, var(--bg-primary) 100%); 
     }
     
-    /* Nav active styling mapping */
+    /* Nav link styling */
     .nav-link {
       color: var(--text-secondary);
     }
@@ -166,6 +167,7 @@
     }
   </style>
   
+  <!-- STREAMING_CHUNK: Setting Tailwind configuration -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -192,23 +194,27 @@
 </head>
 <body class="w-full overflow-x-hidden">
 
+  <!-- STREAMING_CHUNK: Rendering responsive Header Navigation -->
   <!-- Nav -->
   <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-4" id="main-nav">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between relative">
       
+      <!-- Left dummy block for perfect spacing in 3-column layout -->
+      <div class="flex-1 hidden md:block"></div>
+
       <!-- Center Aligned Nav Links in a Rounded Capsule -->
-      <div class="hidden md:flex gap-6 text-sm items-center mx-auto px-8 py-2.5 rounded-full glass border border-ui-border" id="desktop-menu">
+      <div class="hidden md:flex gap-6 text-sm items-center justify-center mx-auto px-8 py-2.5 rounded-full glass border border-ui-border" id="desktop-menu">
         <a href="#about" class="nav-link hover:text-brand-primary transition-colors py-1 font-semibold">Tentang</a> 
         <a href="#facilities" class="nav-link hover:text-brand-primary transition-colors py-1 font-semibold">Fasilitas</a> 
         <a href="#gym" class="nav-link hover:text-brand-primary transition-colors py-1 font-semibold">Gym &amp; Fitness</a> 
         <a href="#minisoccer" class="nav-link hover:text-brand-primary transition-colors py-1 font-semibold">Mini Soccer</a> 
         <a href="#kuliner" class="nav-link hover:text-brand-primary transition-colors py-1 font-semibold">Kuliner</a> 
-        <a href="#testimonials" class="nav-link hover:text-brand-primary transition-colors py-1 font-semibold">Testimoni</a>
         <a href="#gallery" class="nav-link hover:text-brand-primary transition-colors py-1 font-semibold">Galeri</a>
+        <a href="#testimonials" class="nav-link hover:text-brand-primary transition-colors py-1 font-semibold">Testimoni</a>
       </div>
 
-      <!-- Floating Controls (Theme Toggle & Dynamic Prayer Times) -->
-      <div class="flex items-center gap-4 absolute right-6">
+      <!-- Floating Controls (Theme Toggle & Dynamic Prayer Times aligned right) -->
+      <div class="flex-1 flex items-center justify-end gap-3 md:gap-4">
         <!-- Theme Toggle Button -->
         <button id="theme-toggle-btn" class="p-2 rounded-full glass hover:scale-105 transition-all text-ui-txt flex items-center justify-center" aria-label="Toggle Theme">
           <!-- Sun Icon -->
@@ -222,7 +228,7 @@
           </svg>
         </button>
 
-        <!-- Dynamic Upcoming Prayer & Countdown Widget -->
+        <!-- Dynamic Upcoming Prayer & Countdown Widget (No icons) -->
         <div id="prayer-header-widget" class="hidden md:flex items-center justify-center px-4 py-2 rounded-full glass border border-ui-border text-xs min-w-[170px] text-gray-200">
           <span class="w-2.5 h-2.5 rounded-full bg-brand-primary animate-pulse mr-2 flex-shrink-0"></span>
           <div id="prayer-display-container" class="transition-all duration-300 opacity-100 font-bold tracking-wide">
@@ -238,6 +244,7 @@
     </div>
   </nav>
 
+  <!-- STREAMING_CHUNK: Setting up mobile menu drawer -->
   <!-- Mobile Menu Drawer -->
   <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg translate-x-full transition-transform duration-300 flex flex-col justify-center items-center gap-6 md:hidden">
     <button id="close-drawer-btn" class="absolute top-6 right-6 text-white hover:text-brand-primary transition">
@@ -248,13 +255,14 @@
     <a href="#gym" class="mobile-nav-link text-xl text-gray-300 hover:text-brand-primary transition font-semibold">Gym &amp; Fitness</a>
     <a href="#minisoccer" class="mobile-nav-link text-xl text-gray-300 hover:text-brand-primary transition font-semibold">Mini Soccer</a>
     <a href="#kuliner" class="mobile-nav-link text-xl text-gray-300 hover:text-brand-primary transition font-semibold">Kuliner</a>
-    <a href="#testimonials" class="mobile-nav-link text-xl text-gray-300 hover:text-brand-primary transition font-semibold">Testimoni</a>
     <a href="#gallery" class="mobile-nav-link text-xl text-gray-300 hover:text-brand-primary transition font-semibold">Galeri</a>
+    <a href="#testimonials" class="mobile-nav-link text-xl text-gray-300 hover:text-brand-primary transition font-semibold">Testimoni</a>
     <button onclick="openBookingModal(); toggleMobileMenu();" class="bg-brand-primary hover:bg-emerald-400 text-black px-8 py-3 rounded-full font-semibold mt-4 transition shadow-lg shadow-brand-primary/25">
       Booking Online
     </button>
   </div>
 
+  <!-- STREAMING_CHUNK: Creating Hero section with social media icons -->
   <!-- Hero -->
   <section class="relative w-full h-screen flex items-center justify-center overflow-hidden">
     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 motion-safe:animate-[pulse_8s_ease-in-out_infinite]" loading="lazy" src="https://images.pexels.com/photos/18968457/pexels-photo-18968457.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" alt="Arsitektur Gazebo Sport Center modern di malam hari">
@@ -280,7 +288,7 @@
         </a>
       </div>
 
-      <!-- Social Media Icons (Outlined & Correct Links) -->
+      <!-- Perfect Pixel TikTok Glyph & Verified Social Links -->
       <div class="flex items-center gap-6 text-white/70">
         <a href="https://www.instagram.com/gazebosportcenter/" target="_blank" rel="noopener" class="hover:text-brand-secondary hover:scale-110 transition-all" title="Instagram">
           <i data-lucide="instagram" class="w-6 h-6"></i>
@@ -289,9 +297,9 @@
           <i data-lucide="facebook" class="w-6 h-6"></i>
         </a>
         <a href="https://www.tiktok.com/@gazebosportcenter" target="_blank" rel="noopener" class="hover:text-brand-secondary hover:scale-110 transition-all" title="TikTok">
-          <!-- TikTok Glyph Icon Custom SVG -->
+          <!-- Perfect Pixel TikTok Glyph -->
           <svg class="w-6 h-6 fill-current text-white hover:text-brand-secondary transition-all" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.53 0c1.31 0 2.61.01 3.91 0 .08 1.53.63 3.02 1.59 4.23.95 1.15 2.27 1.95 3.73 2.24l-.01 3.9c-1.37-.02-2.71-.4-3.87-1.13-.53-.33-1.01-.74-1.42-1.21-.04 1.34-.02 2.69-.03 4.03-.05 1.5-.32 3-.88 4.41-.61 1.55-1.63 2.94-2.95 3.93-1.32.99-2.9 1.63-4.55 1.83-2.13.26-4.32-.15-6.19-1.24C1.5 16.53.37 14.53.11 12.33c-.27-2.27.42-4.59 1.89-6.3C3.5 4.3 5.72 3.12 8.09 2.9c1.07-.1 2.15.03 3.18.39l-.68 3.86c-.73-.24-1.5-.33-2.27-.24-.97.11-1.9.56-2.59 1.25-.72.71-1.15 1.68-1.2 2.69-.07 1.3.43 2.59 1.37 3.49a4.85 4.85 0 0 0 3.79 1.48c1.19-.07 2.33-.67 3.05-1.63.48-.65.73-1.45.74-2.26V0h.1z"/>
+            <path d="M12.525 0h3.91c.08 1.528.63 3.018 1.59 4.228.95 1.15 2.27 1.95 3.73 2.24v3.9c-1.37-.02-2.71-.4-3.87-1.13-.53-.33-1.01-.74-1.42-1.21-.04 1.34-.02 2.69-.03 4.03-.05 1.5-.32 3-.88 4.41-.61 1.55-1.63 2.94-2.95 3.93-1.32.99-2.9 1.63-4.55 1.83-2.13.26-4.32-.15-6.19-1.24C1.5 16.53.37 14.53.11 12.33c-.27-2.27.42-4.59 1.89-6.3C3.5 4.3 5.72 3.12 8.09 2.9c1.07-.1 2.15.03 3.18.39l-.68 3.86c-.73-.24-1.5-.33-2.27-.24-.97.11-1.9.56-2.59 1.25-.72.71-1.15 1.68-1.2 2.69-.07 1.3.43 2.59 1.37 3.49a4.85 4.85 0 0 0 3.79 1.48c1.19-.07 2.33-.67 3.05-1.63.48-.65.73-1.45.74-2.26V0h.1z"/>
           </svg>
         </a>
         <a href="https://www.youtube.com/results?search_query=gazebo+sport+center" target="_blank" rel="noopener" class="hover:text-brand-secondary hover:scale-110 transition-all" title="YouTube">
@@ -340,6 +348,7 @@
     </div>
   </section>
 
+  <!-- STREAMING_CHUNK: Preparing Facilities layout grid -->
   <!-- Facilities -->
   <section id="facilities" class="py-28 px-6 bg-ui-bgSec relative border-y border-ui-border">
     <div class="max-w-7xl mx-auto">
@@ -475,6 +484,7 @@
     </div>
   </section>
 
+  <!-- STREAMING_CHUNK: Integrating Mini Soccer Section with customized Ball Outline icon -->
   <!-- Mini Soccer Section -->
   <section id="minisoccer" class="py-28 px-6 bg-ui-bgSec relative border-y border-ui-border">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -510,7 +520,7 @@
         </div>
         <div class="mt-8">
           <a href="https://www.instagram.com/gsc.kidssoccer/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold bg-brand-primary hover:bg-emerald-400 text-black transition duration-300 shadow-lg shadow-brand-primary/20">
-            <!-- Soccer Ball Outline Custom SVG -->
+            <!-- Icon Ball Outline -->
             <svg class="w-5 h-5 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="2">
               <circle cx="12" cy="12" r="10"/>
               <path d="m12 2-3.5 3.5H5.5L4 9l3.5 3L12 10.5l4.5 1.5 3.5-3-1.5-3.5h-3L12 2Z"/>
@@ -557,6 +567,7 @@
         </div>
         <div class="mt-8">
           <a href="https://www.instagram.com/gsc.kidsplay/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold border border-brand-primary/40 hover:bg-brand-primary hover:text-black hover:border-brand-primary text-ui-txt transition duration-300">
+            <!-- Rocket outline icon requested -->
             <i data-lucide="rocket" class="w-4 h-4"></i> Lihat Fasilitas
           </a>
         </div>
@@ -564,6 +575,7 @@
     </div>
   </section>
 
+  <!-- STREAMING_CHUNK: Formatting Culinary & UMKM Area with dynamic logo marquee -->
   <!-- Kuliner -->
   <section id="kuliner" class="py-28 px-6 bg-ui-bgSec border-y border-ui-border">
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center fade-in">
@@ -586,7 +598,7 @@
       </div>
     </div>
 
-    <!-- REVISED MARQUEE MITRA LOGOS (Smoother and slower with Custom SVGs) -->
+    <!-- REVISED MARQUEE MITRA LOGOS (Outlined versions and slowed smooth speed) -->
     <div class="max-w-7xl mx-auto mt-16 overflow-hidden relative">
       <div class="absolute top-0 bottom-0 left-0 w-16 md:w-32 bg-gradient-to-r from-ui-bgSec to-transparent z-10 pointer-events-none"></div>
       <div class="absolute top-0 bottom-0 right-0 w-16 md:w-32 bg-gradient-to-l from-ui-bgSec to-transparent z-10 pointer-events-none"></div>
@@ -742,51 +754,47 @@
     </div>
   </section>
 
-  <!-- Interactive Reservation Simulator -->
-  <section id="reservation-simulator" class="py-28 px-6">
-    <div class="max-w-4xl mx-auto glass rounded-3xl p-8 md:p-12 border border-ui-border relative overflow-hidden">
-      <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand-primary/10 rounded-full blur-2xl"></div>
-      <div class="text-center mb-8">
-        <span class="text-brand-primary font-bold uppercase tracking-widest text-xs">ONLINE RESERVASI SIMULATOR</span>
-        <h2 class="text-2xl md:text-3xl font-extrabold mt-2 text-ui-txt">Hitung &amp; Reservasi Fasilitas</h2>
-        <p class="text-ui-txtSec text-sm mt-2">Pilih fasilitas, lama reservasi, dan hitung estimasi total biaya Anda secara instan.</p>
+  <!-- STREAMING_CHUNK: Rendering Gallery Section above Testimonials as requested -->
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-28 px-6 bg-ui-bgSec border-y border-ui-border relative overflow-hidden">
+    <div class="max-w-7xl mx-auto mb-12 text-center">
+      <span class="text-brand-secondary font-bold uppercase tracking-widest text-sm">GALERI AKTIVITAS</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold mt-3 text-ui-txt">Dokumentasi Kawasan GSC</h2>
+      <p class="text-ui-txtSec text-sm mt-3">Klik pada foto untuk melihat ukuran penuh</p>
+    </div>
+
+    <!-- Infinite Auto Sliding Gallery Wrapper with improved seamless gradients -->
+    <div class="relative w-full overflow-hidden">
+      <!-- Upgraded fade mask overlays to prevent hard borders completely -->
+      <div class="absolute top-0 bottom-0 left-0 w-24 md:w-48 gallery-mask-l z-20 pointer-events-none"></div>
+      <div class="absolute top-0 bottom-0 right-0 w-24 md:w-48 gallery-mask-r z-20 pointer-events-none"></div>
+      
+      <div class="gallery-track flex gap-6">
+        <!-- Slide 1 -->
+        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/12314077/pexels-photo-12314077.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Latihan Gym">
+        <!-- Slide 2 -->
+        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/19875328/pexels-photo-19875328.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Playground Anak">
+        <!-- Slide 3 -->
+        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/37307945/pexels-photo-37307945.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Lapangan Basket">
+        <!-- Slide 4 -->
+        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/37097046/pexels-photo-37097046.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Futsal GSC">
+        <!-- Slide 5 -->
+        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/25078446/pexels-photo-25078446.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Kuliner Lokal">
+        <!-- Slide 6 -->
+        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/6300857/pexels-photo-6300857.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Keluarga Bersantai">
+        
+        <!-- Duplicated items for infinite marquee slide continuity -->
+        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/12314077/pexels-photo-12314077.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Latihan Gym">
+        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/19875328/pexels-photo-19875328.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Playground Anak">
+        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/37307945/pexels-photo-37307945.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Lapangan Basket">
+        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/37097046/pexels-photo-37097046.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Futsal GSC">
+        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/25078446/pexels-photo-25078446.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Kuliner Lokal">
+        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/6300857/pexels-photo-6300857.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Keluarga Bersantai">
       </div>
-
-      <form id="calc-form" class="space-y-6">
-        <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <label class="block text-sm font-semibold text-ui-txt mb-2">Pilih Fasilitas</label>
-            <div class="relative">
-              <select id="calc-facility" onchange="updateCalc()" class="w-full bg-ui-bg border border-ui-border rounded-xl px-4 py-3 text-ui-txt focus:border-brand-primary focus:outline-none appearance-none">
-                <option value="basketball" data-price="20000">Basketball 3X3 (Rp 20.000 / Jam)</option>
-                <option value="minisoccer" data-price="50000">Mini Soccer Kids (Rp 50.000 / Jam)</option>
-                <option value="meeting" data-price="100000">Ruang Meeting Private (Rp 100.000 / Jam)</option>
-                <option value="gym" data-price="15000">Gym Daily Session (Rp 15.000 / Visit)</option>
-              </select>
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-ui-txtSec">
-                <i data-lucide="chevron-right" class="w-4 h-4 transform rotate-90"></i>
-              </div>
-            </div>
-          </div>
-          <div>
-            <label id="duration-label" class="block text-sm font-semibold text-ui-txt mb-2">Durasi (Jam)</label>
-            <input type="number" id="calc-duration" value="1" min="1" max="12" onchange="updateCalc()" onkeyup="updateCalc()" class="w-full bg-ui-bg border border-ui-border rounded-xl px-4 py-3 text-ui-txt focus:border-brand-primary focus:outline-none">
-          </div>
-        </div>
-
-        <div class="bg-brand-primary/5 border border-brand-primary/10 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div>
-            <p class="text-xs text-ui-txtSec uppercase tracking-wider">Estimasi Total Biaya</p>
-            <h3 class="text-3xl font-black text-brand-primary mt-1" id="calc-total-display">Rp 20.000</h3>
-          </div>
-          <button type="button" onclick="sendWhatsAppBooking()" class="w-full md:w-auto bg-brand-primary hover:bg-emerald-400 text-black font-semibold px-8 py-3.5 rounded-full transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-primary/25">
-            <i data-lucide="phone" class="w-5 h-5"></i> Hubungi WA Untuk Booking
-          </button>
-        </div>
-      </form>
     </div>
   </section>
 
+  <!-- STREAMING_CHUNK: Setting up Testimonials Slider with infinite loop -->
   <!-- Testimonials Slider Section -->
   <section id="testimonials" class="py-28 px-6 relative bg-ui-bg overflow-hidden">
     <div class="max-w-7xl mx-auto">
@@ -913,45 +921,53 @@
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="py-28 px-6 bg-ui-bgSec border-y border-ui-border relative overflow-hidden">
-    <div class="max-w-7xl mx-auto mb-12 text-center">
-      <span class="text-brand-secondary font-bold uppercase tracking-widest text-sm">GALERI AKTIVITAS</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold mt-3 text-ui-txt">Dokumentasi Kawasan GSC</h2>
-      <p class="text-ui-txtSec text-sm mt-3">Klik pada foto untuk melihat ukuran penuh</p>
-    </div>
-
-    <!-- Infinite Auto Sliding Gallery Wrapper with improved seamless gradients -->
-    <div class="relative w-full overflow-hidden">
-      <!-- Upgraded fade mask overlays to prevent hard borders completely -->
-      <div class="absolute top-0 bottom-0 left-0 w-24 md:w-48 gallery-mask-l z-20 pointer-events-none"></div>
-      <div class="absolute top-0 bottom-0 right-0 w-24 md:w-48 gallery-mask-r z-20 pointer-events-none"></div>
-      
-      <div class="gallery-track flex gap-6">
-        <!-- Slide 1 -->
-        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/12314077/pexels-photo-12314077.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Latihan Gym">
-        <!-- Slide 2 -->
-        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/19875328/pexels-photo-19875328.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Playground Anak">
-        <!-- Slide 3 -->
-        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/37307945/pexels-photo-37307945.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Lapangan Basket">
-        <!-- Slide 4 -->
-        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/37097046/pexels-photo-37097046.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Futsal GSC">
-        <!-- Slide 5 -->
-        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/25078446/pexels-photo-25078446.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Kuliner Lokal">
-        <!-- Slide 6 -->
-        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/6300857/pexels-photo-6300857.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Keluarga Bersantai">
-        
-        <!-- Duplicated items for infinite marquee slide continuity -->
-        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/12314077/pexels-photo-12314077.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Latihan Gym">
-        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/19875328/pexels-photo-19875328.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Playground Anak">
-        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/37307945/pexels-photo-37307945.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Lapangan Basket">
-        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/37097046/pexels-photo-37097046.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Futsal GSC">
-        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/25078446/pexels-photo-25078446.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Kuliner Lokal">
-        <img onclick="openLightbox(this.src)" class="rounded-2xl w-80 h-56 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md flex-shrink-0" loading="lazy" src="https://images.pexels.com/photos/6300857/pexels-photo-6300857.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Keluarga Bersantai">
+  <!-- STREAMING_CHUNK: Setting up the Interactive Reservation Simulator above CTA -->
+  <!-- Interactive Reservation Simulator -->
+  <section id="reservation-simulator" class="py-28 px-6">
+    <div class="max-w-4xl mx-auto glass rounded-3xl p-8 md:p-12 border border-ui-border relative overflow-hidden">
+      <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand-primary/10 rounded-full blur-2xl"></div>
+      <div class="text-center mb-8">
+        <span class="text-brand-primary font-bold uppercase tracking-widest text-xs">ONLINE RESERVASI SIMULATOR</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold mt-2 text-ui-txt">Hitung &amp; Reservasi Fasilitas</h2>
+        <p class="text-ui-txtSec text-sm mt-2">Pilih fasilitas, lama reservasi, dan hitung estimasi total biaya Anda secara instan.</p>
       </div>
+
+      <form id="calc-form" class="space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-semibold text-ui-txt mb-2">Pilih Fasilitas</label>
+            <div class="relative">
+              <select id="calc-facility" onchange="updateCalc()" class="w-full bg-ui-bg border border-ui-border rounded-xl px-4 py-3 text-ui-txt focus:border-brand-primary focus:outline-none appearance-none">
+                <option value="basketball" data-price="20000">Basketball 3X3 (Rp 20.000 / Jam)</option>
+                <option value="minisoccer" data-price="50000">Mini Soccer Kids (Rp 50.000 / Jam)</option>
+                <option value="meeting" data-price="100000">Ruang Meeting Private (Rp 100.000 / Jam)</option>
+                <option value="gym" data-price="15000">Gym Daily Session (Rp 15.000 / Visit)</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-ui-txtSec">
+                <i data-lucide="chevron-right" class="w-4 h-4 transform rotate-90"></i>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label id="duration-label" class="block text-sm font-semibold text-ui-txt mb-2">Durasi (Jam)</label>
+            <input type="number" id="calc-duration" value="1" min="1" max="12" onchange="updateCalc()" onkeyup="updateCalc()" class="w-full bg-ui-bg border border-ui-border rounded-xl px-4 py-3 text-ui-txt focus:border-brand-primary focus:outline-none">
+          </div>
+        </div>
+
+        <div class="bg-brand-primary/5 border border-brand-primary/10 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>
+            <p class="text-xs text-ui-txtSec uppercase tracking-wider">Estimasi Total Biaya</p>
+            <h3 class="text-3xl font-black text-brand-primary mt-1" id="calc-total-display">Rp 20.000</h3>
+          </div>
+          <button type="button" onclick="sendWhatsAppBooking()" class="w-full md:w-auto bg-brand-primary hover:bg-emerald-400 text-black font-semibold px-8 py-3.5 rounded-full transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-primary/25">
+            <i data-lucide="phone" class="w-5 h-5"></i> Hubungi WA Untuk Booking
+          </button>
+        </div>
+      </form>
     </div>
   </section>
 
+  <!-- STREAMING_CHUNK: Formatting CTA section -->
   <!-- CTA -->
   <section class="py-28 px-6 relative overflow-hidden">
     <div class="absolute inset-0 bg-brand-primary/5 blur-3xl pointer-events-none"></div>
@@ -970,6 +986,7 @@
     </div>
   </section>
 
+  <!-- STREAMING_CHUNK: Placing Footer details -->
   <!-- Footer -->
   <footer class="border-t border-ui-border bg-ui-bgSec py-16 px-6">
     <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
@@ -1106,24 +1123,7 @@
     </div>
   </div>
 
-  <!-- Real-time Social Proof Toast Notification (Left Side Pop-up) -->
-  <div id="social-proof-toast" class="fixed bottom-6 left-6 z-[90] transform translate-y-24 opacity-0 transition-all duration-500 max-w-sm w-full pointer-events-none md:pointer-events-auto">
-    <div class="glass border border-ui-border rounded-2xl p-4 flex items-start gap-3 shadow-2xl relative">
-      <div class="absolute top-3 right-3 flex h-2 w-2">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
-      </div>
-      <div class="p-2 rounded-xl bg-brand-primary/10 flex-shrink-0 flex items-center justify-center">
-        <i id="proof-icon" data-lucide="users" class="text-brand-primary w-5 h-5"></i>
-      </div>
-      <div>
-        <p id="proof-title" class="text-[10px] font-bold text-brand-primary tracking-wider uppercase">Live Activity</p>
-        <p id="proof-message" class="text-xs text-ui-txt mt-1 leading-snug font-medium">32 pengunjung sedang melihat website GSC saat ini.</p>
-        <span id="proof-time" class="text-[9px] text-ui-txtSec block mt-1">Aktif sekarang</span>
-      </div>
-    </div>
-  </div>
-
+  <!-- STREAMING_CHUNK: Instantiating JavaScript functions for scrolling, sliders and prayer APIs -->
   <script>
     // Initialize Lucide Icons
     lucide.createIcons();
@@ -1393,63 +1393,7 @@
 
     window.addEventListener('resize', updateTestimonialSlider);
 
-    // Social Proof simulated Notification
-    const socialProofEvents = [
-      {
-        icon: "users",
-        title: "PENGUNJUNG AKTIF",
-        message: "42 orang sedang mengeksplorasi fasilitas GSC Yogyakarta saat ini.",
-        time: "Aktif sekarang"
-      },
-      {
-        icon: "calendar",
-        title: "RESERVASI TERBARU",
-        message: "Seseorang dari Banguntapan baru saja melakukan booking Lapangan Basket 3x3.",
-        time: "2 menit yang lalu"
-      },
-      {
-        icon: "dumbbell",
-        title: "MEMBER BARU JOIN",
-        message: "Roni S. dari Sleman baru saja mendaftar Bulanan di Gym &amp; Fitness Center GSC.",
-        time: "5 menit yang lalu"
-      },
-      {
-        icon: "goal",
-        title: "RESERVASI LAPANGAN",
-        message: "Tim Soccer Junior dari Wirokerten baru saja mengamankan slot Mini Soccer Kids.",
-        time: "12 menit yang lalu"
-      },
-      {
-        icon: "coffee",
-        title: "KULINER CORNER",
-        message: "6 orang baru saja memesan Soto &amp; Pawon Ndeso via WhatsApp.",
-        time: "Baru saja"
-      }
-    ];
-
-    let currentProofIndex = 0;
-    function cycleSocialProof() {
-      const toast = document.getElementById('social-proof-toast');
-      if (!toast) return;
-
-      toast.classList.add('translate-y-24', 'opacity-0');
-
-      setTimeout(() => {
-        const data = socialProofEvents[currentProofIndex];
-        document.getElementById('proof-message').innerHTML = data.message;
-        document.getElementById('proof-title').innerText = data.title;
-        document.getElementById('proof-time').innerText = data.time;
-        
-        const iconContainer = document.getElementById('proof-icon');
-        iconContainer.setAttribute('data-lucide', data.icon);
-        lucide.createIcons();
-
-        toast.classList.remove('translate-y-24', 'opacity-0');
-        currentProofIndex = (currentProofIndex + 1) % socialProofEvents.length;
-      }, 600);
-    }
-
-    // Dynamic Prayer Times Logic using Aladhan API
+    // Dynamic Prayer Times Logic using Aladhan API (No icon output inside display labels)
     let prayerTimings = null;
     let showCountdown = false;
 
@@ -1526,8 +1470,9 @@
       const mins = next.diffMin % 60;
       const countdownStr = hours > 0 ? `${hours}j ${mins}m` : `${mins} menit`;
 
-      const displayScheduleText = `🕌 ${next.name} ${next.time}`;
-      const displayCountdownText = `⏳ ${next.name} - ${countdownStr}`;
+      // Emoji/Icons completely removed as per instruction #4
+      const displayScheduleText = `${next.name} ${next.time}`;
+      const displayCountdownText = `${next.name} - ${countdownStr}`;
 
       const targetText = showCountdown ? displayCountdownText : displayScheduleText;
 
@@ -1554,12 +1499,6 @@
         showCountdown = !showCountdown;
         updatePrayerWidgetUI();
       }, 4000);
-
-      // Social Proof Notification starts cycling
-      setTimeout(() => {
-        cycleSocialProof();
-        setInterval(cycleSocialProof, 10000);
-      }, 3000);
     }
   </script>
 </body>
